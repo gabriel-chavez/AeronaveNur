@@ -13,7 +13,7 @@ namespace Aeronave.Domain.Event
         public Guid IdAereopuertoEstacionamiento { get; private set; }
         public int Estado { get; private set; }
         public string Matricula { get; private set; }
-        public AeronaveCreada(Guid idModelo, Guid idAereopuertoEstacionamiento, int estado, string matricula = null) : base(DateTime.Now)
+        public AeronaveCreada(Guid idModelo, Guid idAereopuertoEstacionamiento, int estado, string matricula) : base(DateTime.Now)
         {
             IdModelo = idModelo;
             IdAereopuertoEstacionamiento = idAereopuertoEstacionamiento;

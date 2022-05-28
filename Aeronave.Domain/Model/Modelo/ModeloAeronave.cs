@@ -13,8 +13,8 @@ namespace Aeronave.Domain.Model.Modelo
         public string Modelo { get; private set; }
         public string Marca { get; private set; }
         public decimal CapacidadCarga { get; private set; }
-        public decimal CapacidadCargaCombustible { get; set; }
-        public List<Asiento> Asientos { get; set; }
+        public decimal CapacidadCargaCombustible { get; private set; }
+        public List<Asiento> Asientos { get; private set; }
         public ModeloAeronave(string modelo, string marca, decimal capacidadCarga, decimal capacidadCargaCombustible)
         {
             Id = Guid.NewGuid();

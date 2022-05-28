@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Aeronave.Application.Dto.Aeropuerto
+namespace Aeronave.Infraestructure.EF.ReadModel
 {
-    public class AeropuertoDto
+    public class AeropuertoReadModel
     {
         public Guid Id { get; set; }
         public string Nombre { get;  set; }

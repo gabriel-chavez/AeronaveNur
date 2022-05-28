@@ -1,11 +1,8 @@
 ﻿using ShareKernel.Core;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Aeronave.Domain.Model.Aeronave
+
+namespace Aeronave.Domain.Model.Aeronaves
 {
     public class Mantenimiento: Entity<Guid>
     {

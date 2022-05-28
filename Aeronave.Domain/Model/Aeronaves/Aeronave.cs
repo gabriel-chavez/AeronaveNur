@@ -1,22 +1,21 @@
 ﻿using Aeronave.Domain.Event;
+
 using ShareKernel.Core;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Aeronave.Domain.Model.Aeronave
+
+namespace Aeronave.Domain.Model.Aeronaves
 {
-    public class Aereonave:AggregateRoot<Guid>
+    public class Aeronave:AggregateRoot<Guid>
     {
         public Guid IdModelo { get; private set; }
         public Guid IdAereopuertoEstacionamiento { get; private set; }
         public int Estado { get; private set; }
-        public string Matricula { get; set; }
+        public string Matricula { get; private set; }
         public List<Mantenimiento> MantenimientoAeronave;
 
-        public Aereonave(Guid idModelo, Guid idAereopuertoEstacionamiento, int estado, string matricula = null)
+        public Aeronave(Guid idModelo, Guid idAereopuertoEstacionamiento, int estado, string matricula)
         {
             Id = Guid.NewGuid();
             IdModelo = idModelo;
@@ -29,6 +28,11 @@ namespace Aeronave.Domain.Model.Aeronave
             var mantenimiento = new Mantenimiento(fechaInicio, fechaFin, observaciones);
             MantenimientoAeronave.Add(mantenimiento);
             AddDomainEvent(new MantenimientoAgregado(fechaInicio, fechaFin, observaciones));
-        } 
+        }
+        public void ConsolidarRegistro()
+        {
+            var evento = new AeronaveCreada(IdModelo,IdAereopuertoEstacionamiento,Estado,Matricula);
+            AddDomainEvent(evento);
+        }
     }
 }

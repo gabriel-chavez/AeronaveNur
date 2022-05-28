@@ -1,22 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>c857ea65-ffcb-44a2-88f2-fda0b6395382</UserSecretsId>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Folder Include="ValueObject\" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.16">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ShareKernel\ShareKernel.csproj" />
+    <ProjectReference Include="..\Aeronave.Infraestructure\Aeronave.Infraestructure.csproj" />
   </ItemGroup>
 
 </Project>

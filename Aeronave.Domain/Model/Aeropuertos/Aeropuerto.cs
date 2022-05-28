@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Aeronave.Domain.Model.Aeropuerto
+namespace Aeronave.Domain.Model.Aeropuertos
 {
     public class Aeropuerto: AggregateRoot<Guid>
     {

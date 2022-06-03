@@ -1,6 +1,6 @@
-﻿using Aeronave.Application.Dto.Aeronave;
-using Aeronave.Application.UseCases.Command.RegistrarAeronave;
-using Aeronave.Application.UseCases.Queries.ObtenerAereonavePorId;
+﻿using Aeronave.Application.Dto.Aeropuerto;
+using Aeronave.Application.UseCases.Command.RegistrarAeropuerto;
+using Aeronave.Application.UseCases.Queries.ObtenerAeropuertoPorId;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -10,16 +10,16 @@ namespace Aeronave.WebApi.Controllers
 {
     [ApiController]
     [Route("/api/[controller]")]
-    public class AeronaveController : ControllerBase
+    public class AeropuertoController : ControllerBase
     {
         private readonly IMediator _mediator;
 
-        public AeronaveController(IMediator mediator)
+        public AeropuertoController(IMediator mediator)
         {
             _mediator = mediator;
         }
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] RegistrarAeronaveCommand command)
+        public async Task<IActionResult> Create([FromBody] RegistrarAeropuertoCommand command)
         {
             Guid id = await _mediator.Send(command);
 
@@ -32,14 +32,13 @@ namespace Aeronave.WebApi.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAeronaveById(Guid id)
         {
-            ObtenerAeronavePorIdQuery query = new ObtenerAeronavePorIdQuery(id);
-            AeronaveDto result = await _mediator.Send(query);
+            ObtenerAeropuertoPorIdQuery query = new ObtenerAeropuertoPorIdQuery(id);
+            AeropuertoDto result = await _mediator.Send(query);
 
             if (result == null)
                 return NotFound();
 
             return Ok(result);
         }
-
     }
 }

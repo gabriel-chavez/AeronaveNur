@@ -9,17 +9,17 @@ namespace Aeronave.Domain.Model.Aeronaves
 {
     public class Aeronave:AggregateRoot<Guid>
     {
-        public Guid IdModelo { get; private set; }
-        public Guid IdAereopuertoEstacionamiento { get; private set; }
+        public Guid ModeloAeronaveId { get; private set; }
+        public Guid AereopuertoId { get; private set; }
         public int Estado { get; private set; }
         public string Matricula { get; private set; }
         public List<Mantenimiento> MantenimientoAeronave;
 
-        public Aeronave(Guid idModelo, Guid idAereopuertoEstacionamiento, int estado, string matricula)
+        public Aeronave(Guid modeloAeronaveId, Guid aereopuertoId, int estado, string matricula)
         {
             Id = Guid.NewGuid();
-            IdModelo = idModelo;
-            IdAereopuertoEstacionamiento = idAereopuertoEstacionamiento;
+            ModeloAeronaveId = modeloAeronaveId;
+            AereopuertoId = aereopuertoId;
             Estado = estado;
             Matricula = matricula;
             MantenimientoAeronave = new List<Mantenimiento>();
@@ -31,7 +31,7 @@ namespace Aeronave.Domain.Model.Aeronaves
         }
         public void ConsolidarRegistro()
         {
-            var evento = new AeronaveCreada(IdModelo,IdAereopuertoEstacionamiento,Estado,Matricula);
+            var evento = new AeronaveCreada(ModeloAeronaveId,AereopuertoId,Estado,Matricula);
             AddDomainEvent(evento);
         }
     }

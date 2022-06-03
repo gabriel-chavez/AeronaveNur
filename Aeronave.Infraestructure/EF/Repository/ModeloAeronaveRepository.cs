@@ -1,5 +1,7 @@
 ﻿using Aeronave.Domain.Model.Modelo;
 using Aeronave.Domain.Repositories;
+using Aeronave.Infraestructure.EF.Contexts;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,19 +12,28 @@ namespace Aeronave.Infraestructure.EF.Repository
 {
     public class ModeloAeronaveRepository : IModeloAeronaveRepository
     {
-        public Task CreateAsync(ModeloAeronave obj)
+        public readonly DbSet<ModeloAeronave> _modeloAeronave;
+
+        public ModeloAeronaveRepository(WriteDbContext modeloAeronave)
         {
-            throw new NotImplementedException();
+            _modeloAeronave = modeloAeronave.ModeloAeronave;
         }
 
-        public Task<ModeloAeronave> FindByIdAsync(Guid id)
+        public async Task CreateAsync(ModeloAeronave obj)
         {
-            throw new NotImplementedException();
+            await _modeloAeronave.AddAsync(obj);
+        }
+
+        public async Task<ModeloAeronave> FindByIdAsync(Guid id)
+        {
+            //return await _modeloAeronave.Include("Asiento").SingleAsync(x => x.Id == id);
+            return await _modeloAeronave.SingleAsync(x => x.Id == id);
         }
 
         public Task UpdateAsync(ModeloAeronave obj)
         {
-            throw new NotImplementedException();
+            _modeloAeronave.Update(obj);
+            return Task.CompletedTask;
         }
     }
 }

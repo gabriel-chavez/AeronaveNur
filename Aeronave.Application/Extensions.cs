@@ -13,6 +13,8 @@ namespace Aeronave.Application
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddTransient<IAeronaveFactory, AeronaveFactory>();
             services.AddTransient<IModeloAeronaveFactory, ModeloAeronaveFactory>();
+            services.AddTransient<IAeropuertoFactory, AeropuertoFactory>();
+
 
             return services;
         }

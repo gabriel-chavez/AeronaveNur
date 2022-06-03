@@ -14,9 +14,9 @@ namespace Aeronave.Application.UseCases.Queries.GetModeloByNombre
 {
     public class GetModeloByIdHandler : IRequestHandler<GetModeloByIdQuery, ModeloAeronaveDto>
     {
-        private readonly IModeloAereonaveRepository _modeloAereonaveRepository;
+        private readonly IModeloAeronaveRepository _modeloAereonaveRepository;
         private readonly ILogger<GetModeloByIdQuery> _logger;
-        public GetModeloByIdHandler(IModeloAereonaveRepository modeloAereonaveRepository, ILogger<GetModeloByIdQuery> logger)
+        public GetModeloByIdHandler(IModeloAeronaveRepository modeloAereonaveRepository, ILogger<GetModeloByIdQuery> logger)
         {
             _modeloAereonaveRepository = modeloAereonaveRepository;
             _logger = logger;
@@ -38,15 +38,15 @@ namespace Aeronave.Application.UseCases.Queries.GetModeloByNombre
                     Modelo = objPedido.Modelo
 
                 };
-                foreach (var item in objPedido.Asientos)
-                {
-                    result.Asientos.Add(new AsientoDto()
-                    {
-                        Fila = item.Fila,
-                        Columna = item.Columna,
-                        Area = item.Area,
-                    });
-                }
+                //foreach (var item in objPedido.Asientos)
+                //{
+                //    result.Asientos.Add(new AsientoDto()
+                //    {
+                //        Fila = item.Fila,
+                //        Columna = item.Columna,
+                //        Area = item.Area,
+                //    });
+                //}
             }
             catch (Exception ex)
             {

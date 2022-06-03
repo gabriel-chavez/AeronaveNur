@@ -1,5 +1,6 @@
 ﻿using Aeronave.Domain.Event;
 using Aeronave.Domain.Model.Aeronaves;
+using Aeronave.Domain.Model.Aeropuertos;
 using Aeronave.Domain.Model.Modelo;
 using Aeronave.Infraestructure.EF.Config.WriteConfig;
 using Microsoft.EntityFrameworkCore;
@@ -14,8 +15,9 @@ namespace Aeronave.Infraestructure.EF.Contexts
 {
     public class WriteDbContext : DbContext
     {
-        public virtual DbSet<Aeronave.Domain.Model.Aeronaves.Aeronave> Aeronave { get; set; }
-        public virtual DbSet<ModeloAeronave> ModeloAeronave { get; set; }
+        public virtual DbSet<Aeronave.Domain.Model.Aeronaves.Aeronave> Aeronave { get; private set; }
+        public virtual DbSet<ModeloAeronave> ModeloAeronave { get; private set; }
+        public virtual DbSet<Aeropuerto> Aeropuerto { get; private set; }
         public WriteDbContext(DbContextOptions<WriteDbContext> options) : base(options)
         {
         }
@@ -29,7 +31,11 @@ namespace Aeronave.Infraestructure.EF.Contexts
 
             var modeloAeronaveConfig = new ModeloAeronaveWriteConfig();
             modelBuilder.ApplyConfiguration<ModeloAeronave>(modeloAeronaveConfig);
+            modelBuilder.ApplyConfiguration<Asiento>(modeloAeronaveConfig);
 
+            var aeropuertoConfig = new AeropuertoWriteConfig();
+            modelBuilder.ApplyConfiguration<Aeropuerto>(aeropuertoConfig);
+      
 
             modelBuilder.Ignore<DomainEvent>();
             modelBuilder.Ignore<AeronaveCreada>();

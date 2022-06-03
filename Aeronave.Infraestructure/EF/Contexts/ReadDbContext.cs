@@ -13,17 +13,17 @@ namespace Aeronave.Infraestructure.EF.Contexts
 {
     public  class ReadDbContext : DbContext
     {
-        public virtual DbSet<AeronaveReadModel> Aeronave { get; set; }
-        public virtual DbSet<ModeloAeronaveReadModel> ModeloAeronave { get; set; }
-        public virtual DbSet<AeropuertoReadModel> Aeropuerto { get; set; }
+        public virtual DbSet<AeronaveReadModel> Aeronave { get; private set; }
+        public virtual DbSet<ModeloAeronaveReadModel> ModeloAeronave { get; private set; }
+        public virtual DbSet<AeropuertoReadModel> Aeropuerto { get; private set; }
         public ReadDbContext(DbContextOptions<ReadDbContext> options) : base(options)
         {
 
         }
-        //public ReadDbContext()
-        //{
+        public ReadDbContext()
+        {
 
-        //}
+        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -34,6 +34,10 @@ namespace Aeronave.Infraestructure.EF.Contexts
             var modeloAeronaveConfig = new ModeloAeronaveReadConfig();
             modelBuilder.ApplyConfiguration<ModeloAeronaveReadModel>(modeloAeronaveConfig);
             modelBuilder.ApplyConfiguration<AsientoReadModel>(modeloAeronaveConfig);
+
+            var aeropuertoConfig = new AeropuertoReadConfig();
+            modelBuilder.ApplyConfiguration<AeropuertoReadModel>(aeropuertoConfig);
+         
 
             modelBuilder.Ignore<DomainEvent>();
             modelBuilder.Ignore<AeronaveCreada>();            

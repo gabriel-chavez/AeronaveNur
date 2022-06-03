@@ -13,6 +13,6 @@ namespace Aeronave.Application.Dto.Modelo
         public string Marca { get;  set; }
         public decimal CapacidadCarga { get;  set; }
         public decimal CapacidadCargaCombustible { get; set; }
-        public List<AsientoDto> Asientos { get; set; }
+        //public List<AsientoDto> Asientos { get; set; }
     }
 }

@@ -28,9 +28,9 @@ namespace Aeronave.Application.UseCases.Queries.ObtenerAereonavePorId
                 Aeronave.Domain.Model.Aeronaves.Aeronave aeronave = await _aeronaveRepository.FindByIdAsync(request.Id);
                 aeronaveDto = new AeronaveDto()
                 {
-                    Id = aeronave.Id,
-                    IdModelo = aeronave.IdModelo,
-                    IdAereopuertoEstacionamiento = aeronave.IdAereopuertoEstacionamiento,
+                   // Id = aeronave.Id,
+                    ModeloAeronaveId = aeronave.ModeloAeronaveId,
+                    AereopuertoEstacionamientoId = aeronave.AereopuertoId,
                     Estado = aeronave.Estado,
                     Matricula = aeronave.Matricula
                 };

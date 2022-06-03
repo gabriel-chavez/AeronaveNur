@@ -4,9 +4,7 @@ using Aeronave.Domain.Repositories;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -40,7 +38,7 @@ namespace Aeronave.Application.UseCases.Command.RegistrarModelo
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error al crear pedido");
+                _logger.LogError(ex, "Error al registrar el Modelo");
             }
             return Guid.Empty;
         }

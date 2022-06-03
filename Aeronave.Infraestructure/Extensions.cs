@@ -34,6 +34,7 @@ namespace Aeronave.Infraestructure
 
             services.AddScoped<IAeronaveRepository, AeronaveRepository>();
             services.AddScoped<IModeloAeronaveRepository, ModeloAeronaveRepository>();
+            services.AddScoped<IAeropuertoRepository, AeropuertoRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 

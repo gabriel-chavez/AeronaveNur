@@ -18,10 +18,10 @@ namespace Aeronave.Infraestructure.EF.Config.WriteConfig
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Estado)
-                .HasColumnName("estado")
+           //     .HasColumnName("estado")
                 .HasMaxLength(100);
             builder.Property(x => x.Matricula)
-                .HasColumnName("matricula")
+            //    .HasColumnName("matricula")
                 .HasMaxLength(100);
 
             builder.HasMany(typeof(Mantenimiento), "MantenimientoAeronave");
@@ -37,14 +37,14 @@ namespace Aeronave.Infraestructure.EF.Config.WriteConfig
             builder.ToTable("Mantenimiento");
             builder.HasKey(x => x.Id);
 
-            builder.Property(x => x.FechaInicio)
-                .HasColumnName("fechaInicio");
+            builder.Property(x => x.FechaInicio);
+            // .HasColumnName("fechaInicio");
 
-            builder.Property(x => x.FechaFin)
-                .HasColumnName("fechaFin");
+            builder.Property(x => x.FechaFin);
+            // .HasColumnName("fechaFin");
 
-            builder.Property(x => x.Observaciones)
-                .HasColumnName("fechaFin");
+            builder.Property(x => x.Observaciones);
+                //.HasColumnName("fechaFin");
         }
 
     }

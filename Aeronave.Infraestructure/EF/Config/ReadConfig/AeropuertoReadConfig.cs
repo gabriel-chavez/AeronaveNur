@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Aeronave.Infraestructure.EF.Config.ReadConfig
 {
-    public class AeropuertoReadConfig : IEntityTypeConfiguration<AeropuertoReadModel>
+    internal class AeropuertoReadConfig : IEntityTypeConfiguration<AeropuertoReadModel>
     {
         public void Configure(EntityTypeBuilder<AeropuertoReadModel> builder)
         {
@@ -17,15 +17,15 @@ namespace Aeronave.Infraestructure.EF.Config.ReadConfig
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Nombre)
-                .HasColumnName("nombre")
+               // .HasColumnName("nombre")
                 .HasMaxLength(500);
 
             builder.Property(x => x.Pais)
-                .HasColumnName("pais")
+               // .HasColumnName("pais")
                 .HasMaxLength(500);
 
             builder.Property(x => x.Ciudad)
-                .HasColumnName("ciudad")
+              //  .HasColumnName("ciudad")
                 .HasMaxLength(500);
         }
     }

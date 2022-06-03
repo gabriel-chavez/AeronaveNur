@@ -23,7 +23,7 @@ namespace Aeronave.Infraestructure.EF.Config.WriteConfig
                 .HasColumnName("marca")
                 .HasMaxLength(100);
             builder.Property(x => x.CapacidadCarga)
-                .HasColumnName("capacidadCarga ")
+                .HasColumnName("capacidadCarga")
                 .HasColumnType("decimal")
                 .HasPrecision(12, 2);
             builder.Property(x => x.CapacidadCargaCombustible)
@@ -31,7 +31,7 @@ namespace Aeronave.Infraestructure.EF.Config.WriteConfig
                 .HasColumnType("decimal")
                 .HasPrecision(12, 2);
 
-            builder.HasMany(typeof(Asiento), "Asientos");
+            //builder.HasMany(typeof(Asiento), "Asientos");
         }
 
         public void Configure(EntityTypeBuilder<Asiento> builder)

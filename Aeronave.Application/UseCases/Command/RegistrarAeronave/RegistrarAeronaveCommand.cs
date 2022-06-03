@@ -11,16 +11,16 @@ namespace Aeronave.Application.UseCases.Command.RegistrarAeronave
     public class RegistrarAeronaveCommand : IRequest<Guid>
     {
         public Guid IdModelo { get;  set; }
-        public Guid IdAereopuertoEstacionamiento { get;  set; }
+        public Guid IdAereopuerto { get;  set; }
         public int Estado { get;  set; }
         public string Matricula { get; set; }
         public List<MantenimientoDto> MantenimientoAeronave;
 
-        public RegistrarAeronaveCommand(List<MantenimientoDto> mantenimientoAeronave, Guid idModelo, Guid idAereopuertoEstacionamiento, int estado, string matricula)
+        public RegistrarAeronaveCommand(List<MantenimientoDto> mantenimientoAeronave, Guid idModelo, Guid idAereopuerto, int estado, string matricula)
         {
             MantenimientoAeronave = mantenimientoAeronave;
             IdModelo = idModelo;
-            IdAereopuertoEstacionamiento = idAereopuertoEstacionamiento;
+            IdAereopuerto = idAereopuerto;
             Estado = estado;
             Matricula = matricula;
         }

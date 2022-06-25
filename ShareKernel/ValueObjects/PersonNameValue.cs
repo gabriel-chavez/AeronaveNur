@@ -1,8 +1,10 @@
 ﻿using ShareKernel.Core;
 using ShareKernel.Rules;
+using System.Diagnostics.CodeAnalysis;
 
 namespace ShareKernel.ValueObjects
 {
+    [ExcludeFromCodeCoverage]
     public record PersonNameValue : ValueObject
     {
         public string Name { get; }

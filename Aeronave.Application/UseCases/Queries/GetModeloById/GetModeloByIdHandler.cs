@@ -38,19 +38,11 @@ namespace Aeronave.Application.UseCases.Queries.GetModeloByNombre
                     Modelo = objPedido.Modelo
 
                 };
-                //foreach (var item in objPedido.Asientos)
-                //{
-                //    result.Asientos.Add(new AsientoDto()
-                //    {
-                //        Fila = item.Fila,
-                //        Columna = item.Columna,
-                //        Area = item.Area,
-                //    });
-                //}
+               
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error al obtener Pedido con id: { PedidoId }", request.Id);
+                _logger.LogError(ex, "Error al obtener Modelo con id: { PedidoId }", request.Id);
             }
             return result;
         }

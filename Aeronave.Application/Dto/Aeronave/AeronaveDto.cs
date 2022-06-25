@@ -8,7 +8,7 @@ namespace Aeronave.Application.Dto.Aeronave
 {
     public class AeronaveDto
     {
-
+        public Guid Id { get; set; }
         public Guid ModeloAeronaveId { get;  set; }
         public Guid AereopuertoEstacionamientoId { get;  set; }
         public int Estado { get;  set; }

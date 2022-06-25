@@ -28,10 +28,10 @@ namespace Aeronave.Application.UseCases.Command.RegistrarModelo
             try
             {
                 ModeloAeronave modeloAeronave = _modeloAeronaveFactory.Crear(request.Modelo, request.Marca, request.CapacidadCarga, request.CapacidadCargaCombustible);
-                foreach (var item in modeloAeronave.Asientos)
-                {
-                    modeloAeronave.AgregarAsientos(item.Fila, item.Columna, item.Area);
-                }
+                //foreach (var item in modeloAeronave.Asientos)
+                //{
+                //    modeloAeronave.AgregarAsientos(item.Fila, item.Columna, item.Area);
+                //}
                 await _modeloAeronaveRepository.CreateAsync(modeloAeronave);
                 await _unitOfWork.Commit();
                 return modeloAeronave.Id;

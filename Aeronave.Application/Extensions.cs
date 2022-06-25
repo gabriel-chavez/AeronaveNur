@@ -1,11 +1,12 @@
 ﻿using Aeronave.Domain.Factories;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 
 namespace Aeronave.Application
 {
+    [ExcludeFromCodeCoverage]
     public static class Extensions
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 namespace ShareKernel.Core
 {
@@ -20,12 +21,12 @@ namespace ShareKernel.Core
         {
             _domainEvents.Add(evento);
         }
-
+        [ExcludeFromCodeCoverage]
         public void ClearDomainEvents()
         {
             _domainEvents.Clear();
         }
-
+        [ExcludeFromCodeCoverage]
         protected void CheckRule(IBussinessRule rule)
         {
             if(rule is null)

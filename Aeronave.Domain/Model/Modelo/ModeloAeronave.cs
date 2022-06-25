@@ -24,11 +24,15 @@ namespace Aeronave.Domain.Model.Modelo
             CapacidadCargaCombustible = capacidadCargaCombustible;
             Asientos = new List<Asiento>();
         }
+        public ModeloAeronave()
+        {
+
+        }
         public void AgregarAsientos(int fila, int columna, string area)
         {
             var asiento = new Asiento(fila, columna, area);
-            Asientos.Add(asiento);
-            AddDomainEvent(new AsientoAgregado(fila, columna, area));
+            //Asientos.Add(asiento);
+            //AddDomainEvent(new AsientoAgregado(fila, columna, area));
         }
     }
 }

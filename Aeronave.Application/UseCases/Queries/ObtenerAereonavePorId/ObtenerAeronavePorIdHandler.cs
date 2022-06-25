@@ -28,7 +28,7 @@ namespace Aeronave.Application.UseCases.Queries.ObtenerAereonavePorId
                 Aeronave.Domain.Model.Aeronaves.Aeronave aeronave = await _aeronaveRepository.FindByIdAsync(request.Id);
                 aeronaveDto = new AeronaveDto()
                 {
-                   // Id = aeronave.Id,
+                    Id = aeronave.Id,
                     ModeloAeronaveId = aeronave.ModeloAeronaveId,
                     AereopuertoEstacionamientoId = aeronave.AereopuertoId,
                     Estado = aeronave.Estado,
@@ -46,7 +46,7 @@ namespace Aeronave.Application.UseCases.Queries.ObtenerAereonavePorId
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error al obtener Pedido con id: { PedidoId }", request.Id);
+                _logger.LogError(ex, "Error al obtener Aeronave con id: { PedidoId }", request.Id);
             }
             return aeronaveDto;
         }

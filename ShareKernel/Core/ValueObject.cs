@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace ShareKernel.Core
 {
     public abstract record ValueObject
     {
+        [ExcludeFromCodeCoverage]
         protected void CheckRule(IBussinessRule rule)
         {
             if (rule is null)

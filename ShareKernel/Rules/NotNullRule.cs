@@ -1,7 +1,9 @@
 ﻿using ShareKernel.Core;
+using System.Diagnostics.CodeAnalysis;
 
 namespace ShareKernel.Rules
 {
+    [ExcludeFromCodeCoverage]
     public class NotNullRule : IBussinessRule
     {
         private readonly object _value;

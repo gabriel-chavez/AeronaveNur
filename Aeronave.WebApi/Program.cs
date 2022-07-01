@@ -23,6 +23,8 @@ namespace Aeronave.WebApi
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                
+                   
                 });
     }
 }

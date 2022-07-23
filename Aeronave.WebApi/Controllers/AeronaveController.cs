@@ -12,9 +12,9 @@ namespace Aeronave.WebApi.Controllers {
     public class AeronaveController : ControllerBase {
         private readonly IMediator _mediator;
 
-        public AeronaveController(IMediator mediator)
+        public AeronaveController(IMediator mediator) { }
 
-            _mediator = mediator;
+        _mediator = mediator;
         }
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] RegistrarAeronaveCommand command) {

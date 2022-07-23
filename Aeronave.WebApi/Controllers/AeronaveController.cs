@@ -21,6 +21,7 @@ namespace Aeronave.WebApi.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] RegistrarAeronaveCommand command)
         {
+
             Guid id = await _mediator.Send(command);
             if (id == Guid.Empty)
                 return BadRequest();

@@ -16,6 +16,8 @@ namespace Aeronave.WebApi.Controllers
 
         public AeronaveController(IMediator mediator)
         {
+
+
             _mediator = mediator;
         }
         [HttpPost]
@@ -24,7 +26,6 @@ namespace Aeronave.WebApi.Controllers
             Guid id = await _mediator.Send(command);
             if (id == Guid.Empty)
                 return BadRequest();
-
             return Ok(id);
         }
         [Route("{id:guid}")]

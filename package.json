@@ -22,11 +22,10 @@
     "husky": "^8.0.0",
     "lint-staged": "^13.0.3"
   },
-  "dependencies": {    
+  "dependencies": {
     "save-dev": "^0.0.1-security"
   },
-  "lint-staged":{
-    "*.cs": "dotnet-format --include"
+  "lint-staged": {
+    "*.cs": "dotnet format --include"
   }
-
 }

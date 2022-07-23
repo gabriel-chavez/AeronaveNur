@@ -16,6 +16,7 @@ namespace Aeronave.WebApi.Controllers
 
         public AeronaveController(IMediator mediator){
             _mediator = mediator;
+
         }
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] RegistrarAeronaveCommand command)

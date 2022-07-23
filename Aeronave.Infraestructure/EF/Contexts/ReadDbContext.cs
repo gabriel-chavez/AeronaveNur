@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Aeronave.Infraestructure.EF.Contexts
 {
-    public  class ReadDbContext : DbContext
+    public class ReadDbContext : DbContext
     {
         public virtual DbSet<AeronaveReadModel> Aeronave { get; private set; }
         public virtual DbSet<ModeloAeronaveReadModel> ModeloAeronave { get; private set; }
@@ -37,14 +37,14 @@ namespace Aeronave.Infraestructure.EF.Contexts
 
             var aeropuertoConfig = new AeropuertoReadConfig();
             modelBuilder.ApplyConfiguration<AeropuertoReadModel>(aeropuertoConfig);
-         
+
 
             modelBuilder.Ignore<DomainEvent>();
-            modelBuilder.Ignore<AeronaveCreada>();            
+            modelBuilder.Ignore<AeronaveCreada>();
             modelBuilder.Ignore<AsientoAgregado>();
             modelBuilder.Ignore<MantenimientoAgregado>();
 
         }
-            
+
     }
 }

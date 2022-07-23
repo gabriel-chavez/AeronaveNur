@@ -25,7 +25,7 @@ namespace Aeronave.Test.WebApi
             var asiento = new List<AsientoDto>();
             var command = new RegistrarModeloCommand(modelo, marca, capacidadCarga, capacidadCargaCombustible, asiento);
 
-            ModeloAeronaveController aeropuertoController = new ModeloAeronaveController(mediator.Object);         
+            ModeloAeronaveController aeropuertoController = new ModeloAeronaveController(mediator.Object);
 
             var resultado = aeropuertoController.Create(command);
 

@@ -19,6 +19,6 @@ namespace Aeronave.Domain.Model.Modelo
             Columna = columna;
             Area = area;
         }
-       
+
     }
 }

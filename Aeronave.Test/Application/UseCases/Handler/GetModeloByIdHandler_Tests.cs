@@ -32,7 +32,7 @@ namespace Aeronave.Test.Application.UseCases.Handler
         {
             _aeronaveRepository = new Mock<IModeloAeronaveRepository>();
             _logger = new Mock<ILogger<GetModeloByIdQuery>>();
-            idTest=Guid.NewGuid();
+            idTest = Guid.NewGuid();
 
             modeloAeronaveTest = new ModeloAeronaveFactory().Crear(modelo, marca, capacidadCarga, capacidadCargaCombustible);
         }
@@ -44,13 +44,13 @@ namespace Aeronave.Test.Application.UseCases.Handler
 
             var objHandler = new GetModeloByIdHandler(
                 _aeronaveRepository.Object,
-                _logger.Object                
+                _logger.Object
             );
             var objRequest = new GetModeloByIdQuery(idTest);
             var tcs = new CancellationTokenSource(1000);
             var result = objHandler.Handle(objRequest, tcs.Token);
             Assert.IsType<ModeloAeronaveDto>(result.Result);
-            
+
         }
         [Fact]
         public void CrearProductoHandler_Handle_Fail()
@@ -59,7 +59,7 @@ namespace Aeronave.Test.Application.UseCases.Handler
             var objHandler = new GetModeloByIdHandler(
                 _aeronaveRepository.Object,
                 _logger.Object
-               
+
             );
             Guid idTest = Guid.NewGuid();
             var objRequest = new GetModeloByIdQuery(
@@ -70,7 +70,7 @@ namespace Aeronave.Test.Application.UseCases.Handler
             _logger.Verify(mock => mock.Log(
                 It.Is<LogLevel>(logLevel => logLevel == LogLevel.Error),
                 It.Is<EventId>(eventId => eventId.Id == 0),
-                It.Is<It.IsAnyType>((@object, @type) => @object.ToString() == $"Error al obtener Modelo con id: { idTest }" ),
+                It.Is<It.IsAnyType>((@object, @type) => @object.ToString() == $"Error al obtener Modelo con id: { idTest }"),
                 It.IsAny<Exception>(),
                 It.IsAny<Func<It.IsAnyType, Exception, string>>())
             , Times.Once);

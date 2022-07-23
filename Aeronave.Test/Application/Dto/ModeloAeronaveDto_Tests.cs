@@ -36,8 +36,8 @@ namespace Aeronave.Test.Application.Dto
             modeloAeronaveDto.CapacidadCargaCombustible = capacidadCargaCombustible;
 
             Assert.Equal(id, modeloAeronaveDto.Id);
-            Assert.Equal(modelo,modeloAeronaveDto.Modelo);
-            Assert.Equal(marca,modeloAeronaveDto.Marca);
+            Assert.Equal(modelo, modeloAeronaveDto.Modelo);
+            Assert.Equal(marca, modeloAeronaveDto.Marca);
             Assert.Equal(capacidadCarga, modeloAeronaveDto.CapacidadCarga);
             Assert.Equal(capacidadCargaCombustible, modeloAeronaveDto.CapacidadCargaCombustible);
 

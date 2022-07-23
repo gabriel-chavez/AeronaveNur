@@ -14,18 +14,18 @@ namespace Aeronave.Test.Application.UseCases.Queries
         public void GetModeloByIdQuery_DataValid()
         {
             var id = Guid.NewGuid();
-            
+
             var command = new GetModeloByIdQuery(id);
 
             Assert.Equal(id, command.Id);
-            
+
         }
         [Fact]
         public void TestConstructor_IsPrivate()
-        {            
+        {
             var command = (GetModeloByIdQuery)Activator.CreateInstance(typeof(GetModeloByIdQuery), true);
             Assert.Equal(Guid.Empty, command.Id);
-            
+
         }
     }
 }

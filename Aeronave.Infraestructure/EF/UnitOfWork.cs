@@ -13,12 +13,12 @@ namespace Aeronave.Infraestructure.EF
     public class UnitOfWork : IUnitOfWork
     {
         private readonly WriteDbContext _context;
-       // private readonly IMediator _mediator;
+        // private readonly IMediator _mediator;
 
         public UnitOfWork(WriteDbContext context)
         {
             _context = context;
-         //   _mediator = mediator;
+            //   _mediator = mediator;
         }
 
         public async Task Commit()

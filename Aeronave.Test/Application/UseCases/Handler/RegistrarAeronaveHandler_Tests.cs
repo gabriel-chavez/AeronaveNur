@@ -23,16 +23,16 @@ namespace Aeronave.Test.Application.UseCases.Handler
         private readonly Mock<IAeronaveFactory> _aeronaveFactory;
         private readonly Mock<IUnitOfWork> _unitOfWork;
 
-        private Guid modeloId= new Guid("3FA85F64-5717-4562-B3FC-2C963F66AFA6");
+        private Guid modeloId = new Guid("3FA85F64-5717-4562-B3FC-2C963F66AFA6");
         private Guid aeropuertoId = new Guid("3FA85F64-5717-4562-B3FC-2C963F66AFA6");
         private int estado = 0;
         private string matricula = "CP-1128";
         private Aeronave.Domain.Model.Aeronaves.Aeronave aeronaveTest;
         public RegistrarAeronaveHandler_Tests()
         {
-            _aeronaveRepository = new Mock<IAeronaveRepository>(); 
+            _aeronaveRepository = new Mock<IAeronaveRepository>();
             _logger = new Mock<ILogger<RegistrarAeronaveHandler>>();
-               _aeronaveFactory = new Mock<IAeronaveFactory>();
+            _aeronaveFactory = new Mock<IAeronaveFactory>();
             _unitOfWork = new Mock<IUnitOfWork>();
             aeronaveTest = new AeronaveFactory().Crear(modeloId, aeropuertoId, estado, matricula);
         }

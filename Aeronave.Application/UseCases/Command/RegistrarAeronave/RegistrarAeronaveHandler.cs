@@ -26,13 +26,13 @@ namespace Aeronave.Application.UseCases.Command.RegistrarAeronave
             _unitOfWork = unitOfWork;
         }
 
-        
+
         public async Task<Guid> Handle(RegistrarAeronaveCommand request, CancellationToken cancellationToken)
         {
             try
             {
                 Aeronave.Domain.Model.Aeronaves.Aeronave aeronave = _aeronaveFactory.Crear(request.IdModelo, request.IdAereopuerto, request.Estado, request.Matricula);
-                if(request.MantenimientoAeronave != null)
+                if (request.MantenimientoAeronave != null)
                 {
                     foreach (var item in request.MantenimientoAeronave)
                     {
@@ -42,7 +42,7 @@ namespace Aeronave.Application.UseCases.Command.RegistrarAeronave
                 else
                 {
                     aeronave.AgregarItem(DateTime.Now, DateTime.Now, "No se registro un mantenimiento programado");
-                }                    
+                }
                 aeronave.ConsolidarRegistro();
                 await _aeronaveRepository.CreateAsync(aeronave);
                 await _unitOfWork.Commit();

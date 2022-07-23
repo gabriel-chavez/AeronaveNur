@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Aeronave.Domain.Repositories
 {
-    public  interface IModeloAeronaveRepository : IRepository<ModeloAeronave, Guid>
+    public interface IModeloAeronaveRepository : IRepository<ModeloAeronave, Guid>
     {
         Task UpdateAsync(ModeloAeronave obj);
     }

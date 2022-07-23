@@ -11,14 +11,14 @@ namespace Aeronave.Infraestructure.EF.Config.WriteConfig
 {
     public class AeronaveWriteConfig : IEntityTypeConfiguration<Aeronave.Domain.Model.Aeronaves.Aeronave>, IEntityTypeConfiguration<Mantenimiento>
     {
-       
+
         public void Configure(EntityTypeBuilder<Domain.Model.Aeronaves.Aeronave> builder)
         {
             builder.ToTable("Aeronave");
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Estado)
-           //     .HasColumnName("estado")
+                //     .HasColumnName("estado")
                 .HasMaxLength(100);
             builder.Property(x => x.Matricula)
             //    .HasColumnName("matricula")
@@ -29,7 +29,7 @@ namespace Aeronave.Infraestructure.EF.Config.WriteConfig
             builder.Ignore("_domainEvents");
             builder.Ignore(x => x.DomainEvents);
             builder.Ignore(x => x.MantenimientoAeronave);
-            
+
 
         }
         public void Configure(EntityTypeBuilder<Mantenimiento> builder)
@@ -44,7 +44,7 @@ namespace Aeronave.Infraestructure.EF.Config.WriteConfig
             // .HasColumnName("fechaFin");
 
             builder.Property(x => x.Observaciones);
-                //.HasColumnName("fechaFin");
+            //.HasColumnName("fechaFin");
         }
 
     }

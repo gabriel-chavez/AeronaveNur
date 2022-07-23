@@ -23,7 +23,7 @@ namespace Aeronave.Test.Domain
             Assert.Equal(fila, asiento.Fila);
             Assert.Equal(columna, asiento.Columna);
             Assert.Equal(area, asiento.Area);
-            
+
 
         }
     }

@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace Aeronave.Domain.Model.Aeronaves
 {
-    public class Aeronave:AggregateRoot<Guid>
+    public class Aeronave : AggregateRoot<Guid>
     {
         public Guid ModeloAeronaveId { get; private set; }
         public Guid AereopuertoId { get; private set; }
@@ -24,14 +24,15 @@ namespace Aeronave.Domain.Model.Aeronaves
             Matricula = matricula;
             MantenimientoAeronave = new List<Mantenimiento>();
         }
-        public void AgregarItem(DateTime fechaInicio, DateTime fechaFin, string observaciones) {
+        public void AgregarItem(DateTime fechaInicio, DateTime fechaFin, string observaciones)
+        {
             var mantenimiento = new Mantenimiento(fechaInicio, fechaFin, observaciones);
             MantenimientoAeronave.Add(mantenimiento);
             AddDomainEvent(new MantenimientoAgregado(fechaInicio, fechaFin, observaciones));
         }
         public void ConsolidarRegistro()
         {
-            var evento = new AeronaveCreada(ModeloAeronaveId,AereopuertoId,Estado,Matricula);
+            var evento = new AeronaveCreada(ModeloAeronaveId, AereopuertoId, Estado, Matricula);
             AddDomainEvent(evento);
         }
     }

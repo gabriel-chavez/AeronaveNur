@@ -17,17 +17,17 @@ namespace Aeronave.Infraestructure.EF.Config.ReadConfig
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Modelo)
-             //   .HasColumnName("modelo")
+                //   .HasColumnName("modelo")
                 .HasMaxLength(100);
             builder.Property(x => x.Marca)
-              //  .HasColumnName("marca")
+                //  .HasColumnName("marca")
                 .HasMaxLength(100);
             builder.Property(x => x.CapacidadCarga)
-               // .HasColumnName("capacidadCarga")
+                // .HasColumnName("capacidadCarga")
                 .HasColumnType("decimal")
                 .HasPrecision(12, 2);
             builder.Property(x => x.CapacidadCargaCombustible)
-               // .HasColumnName("capacidadCargaCombustible")
+                // .HasColumnName("capacidadCargaCombustible")
                 .HasColumnType("decimal")
                 .HasPrecision(12, 2);
 
@@ -44,7 +44,7 @@ namespace Aeronave.Infraestructure.EF.Config.ReadConfig
             //    .HasColumnName("fila");
 
             builder.Property(x => x.Columna);
-             //  .HasColumnName("columna");
+            //  .HasColumnName("columna");
             builder.Property(x => x.Area)
             //   .HasColumnName("area")
                .HasMaxLength(250);

@@ -31,9 +31,9 @@ namespace Aeronave.Test.Application.Dto
             aeropuertoDto.Ciudad = ciudadTest;
 
             Assert.Equal(idTest, aeropuertoDto.Id);
-            Assert.Equal(nombreTest,aeropuertoDto.Nombre);
-            Assert.Equal(paisTest,aeropuertoDto.Pais);
-            Assert.Equal(ciudadTest,aeropuertoDto.Ciudad);
+            Assert.Equal(nombreTest, aeropuertoDto.Nombre);
+            Assert.Equal(paisTest, aeropuertoDto.Pais);
+            Assert.Equal(ciudadTest, aeropuertoDto.Ciudad);
         }
 
     }

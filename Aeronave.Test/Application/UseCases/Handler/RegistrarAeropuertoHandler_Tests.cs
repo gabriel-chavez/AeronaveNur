@@ -64,7 +64,7 @@ namespace Aeronave.Test.Application.UseCases.Handler
                 _aeronaveFactory.Object,
                 _unitOfWork.Object
             );
-           
+
             var objRequest = new RegistrarAeropuertoCommand(
               nombre, pais, ciudad
            );

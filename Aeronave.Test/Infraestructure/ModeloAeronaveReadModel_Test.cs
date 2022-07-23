@@ -18,7 +18,7 @@ namespace Aeronave.Test.Infraestructure
             var marca = "Boeing";
             decimal capacidadCarga = 39790.00m;
             decimal capacidadCargaCombustible = 91380.00m;
-           
+
 
 
             var modeloAeronaveReadModel = new ModeloAeronaveReadModel();

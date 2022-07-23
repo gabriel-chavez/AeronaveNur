@@ -12,7 +12,7 @@ namespace Aeronave.Test.ShareKernel
     {
         [Fact]
         public void Create_Correctly()
-        {           
+        {
             var prueba = "Prueba Excepcion";
             var bussinessRuleValidationException = new BussinessRuleValidationException(prueba);
             Assert.Equal(prueba, bussinessRuleValidationException.Message);

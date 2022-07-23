@@ -12,7 +12,7 @@ namespace ShareKernel.ValueObjects
         public PersonNameValue(string name)
         {
             CheckRule(new StringNotNullOrEmptyRule(name));
-            if(name.Length > 500)
+            if (name.Length > 500)
             {
                 throw new BussinessRuleValidationException("PersonName can't be more than 500 characters");
             }

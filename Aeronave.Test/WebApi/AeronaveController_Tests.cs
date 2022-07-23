@@ -30,7 +30,7 @@ namespace Aeronave.Test.WebApi
             var matricula = "CP-1128";
             var registrarAeronaveCommand = new RegistrarAeronaveCommand(mantenimientoDto, modeloId, aeropuertoId, estado, matricula);
 
-            var resultado= aeronaveController.Create(registrarAeronaveCommand);
+            var resultado = aeronaveController.Create(registrarAeronaveCommand);
 
             Assert.NotNull(resultado);
 
@@ -40,9 +40,9 @@ namespace Aeronave.Test.WebApi
         {
             var mediator = new Mock<IMediator>();
             AeronaveController aeronaveController = new AeronaveController(mediator.Object);
-            
+
             var id = new Guid("3FA85F64-5717-4562-B3FC-2C963F66AFA6");
-          
+
 
             var resultado = aeronaveController.GetAeronaveById(id);
 

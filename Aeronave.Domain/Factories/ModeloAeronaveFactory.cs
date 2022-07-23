@@ -11,7 +11,7 @@ namespace Aeronave.Domain.Factories
     {
         public ModeloAeronave Crear(string modelo, string marca, decimal capacidadCarga, decimal capacidadCargaCombustible)
         {
-            return new ModeloAeronave(modelo,marca,capacidadCarga,capacidadCargaCombustible);
+            return new ModeloAeronave(modelo, marca, capacidadCarga, capacidadCargaCombustible);
         }
     }
 }

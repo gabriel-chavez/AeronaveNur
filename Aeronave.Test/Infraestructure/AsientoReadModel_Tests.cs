@@ -21,9 +21,9 @@ namespace Aeronave.Test.Infraestructure
 
             var asientoReadModel = new AsientoReadModel();
             asientoReadModel.Id = id;
-            asientoReadModel.Fila=fila;
-            asientoReadModel.Columna=columna;
-            asientoReadModel.Area=area;
+            asientoReadModel.Fila = fila;
+            asientoReadModel.Columna = columna;
+            asientoReadModel.Area = area;
             asientoReadModel.ModeloAeronave = new ModeloAeronaveReadModel();
 
 

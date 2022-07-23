@@ -8,7 +8,7 @@ namespace Aeronave.Application.Services
 {
     public class AeronaveService : IAeronaveService
     {
-        public Task<string> GenerarMatriculaAleatoria()=> Task.FromResult("CP-1128");
+        public Task<string> GenerarMatriculaAleatoria() => Task.FromResult("CP-1128");
 
     }
 }

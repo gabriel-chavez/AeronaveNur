@@ -38,7 +38,7 @@ namespace Aeronave.Application.UseCases.Queries.GetModeloByNombre
                     Modelo = objPedido.Modelo
 
                 };
-               
+
             }
             catch (Exception ex)
             {

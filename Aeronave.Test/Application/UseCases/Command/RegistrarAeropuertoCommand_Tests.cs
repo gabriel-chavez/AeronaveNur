@@ -8,12 +8,12 @@ using Xunit;
 
 namespace Aeronave.Test.Application.UseCases.Command
 {
-    public  class RegistrarAeropuertoCommand_Tests
+    public class RegistrarAeropuertoCommand_Tests
     {
         [Fact]
         public void RegistrarAeronaveCommand_DataValid()
         {
-            
+
             var nombre = "LPB, Bolivia";
             var pais = "Bolivia";
             var ciudad = "La Paz";
@@ -22,13 +22,13 @@ namespace Aeronave.Test.Application.UseCases.Command
             Assert.Equal(nombre, command.Nombre);
             Assert.Equal(pais, command.Pais);
             Assert.Equal(ciudad, command.Ciudad);
-            
+
         }
         [Fact]
         public void TestConstructor_IsPrivate()
         {
             var command = (RegistrarAeropuertoCommand)Activator.CreateInstance(typeof(RegistrarAeropuertoCommand), true);
-            
+
             Assert.Null(command.Nombre);
             Assert.Null(command.Pais);
             Assert.Null(command.Ciudad);

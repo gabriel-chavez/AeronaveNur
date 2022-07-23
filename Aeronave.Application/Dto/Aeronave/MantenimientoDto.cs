@@ -9,9 +9,9 @@ namespace Aeronave.Application.Dto.Aeronave
     public class MantenimientoDto
     {
         public Guid Id { get; set; }
-        public DateTime FechaInicio { get;  set; }
+        public DateTime FechaInicio { get; set; }
 
-        public DateTime FechaFin { get;  set; }
-        public string Observaciones { get;  set; }
+        public DateTime FechaFin { get; set; }
+        public string Observaciones { get; set; }
     }
 }

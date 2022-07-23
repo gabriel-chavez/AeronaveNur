@@ -35,7 +35,7 @@ namespace Aeronave.Infraestructure.EF.Contexts
 
             var aeropuertoConfig = new AeropuertoWriteConfig();
             modelBuilder.ApplyConfiguration<Aeropuerto>(aeropuertoConfig);
-      
+
 
             modelBuilder.Ignore<DomainEvent>();
             modelBuilder.Ignore<AeronaveCreada>();

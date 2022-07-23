@@ -8,7 +8,7 @@ using Xunit;
 
 namespace Aeronave.Test.Infraestructure
 {
-    public  class MantenimientoReadModel_Tests
+    public class MantenimientoReadModel_Tests
     {
         [Fact]
         public void Create_Correctly()
@@ -16,12 +16,12 @@ namespace Aeronave.Test.Infraestructure
             var id = Guid.NewGuid();
             var fecha = DateTime.Now;
             var observaciones = "ninguna";
-        
+
 
             var mantenimientoReadModel = new MantenimientoReadModel();
             mantenimientoReadModel.Id = id;
             mantenimientoReadModel.FechaFin = fecha;
-            mantenimientoReadModel.FechaInicio= fecha;
+            mantenimientoReadModel.FechaInicio = fecha;
             mantenimientoReadModel.Observaciones = observaciones;
             mantenimientoReadModel.Aeronave = new AeronaveReadModel();
 

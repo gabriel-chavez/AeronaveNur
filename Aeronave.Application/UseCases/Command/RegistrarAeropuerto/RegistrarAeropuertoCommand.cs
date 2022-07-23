@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Aeronave.Application.UseCases.Command.RegistrarAeropuerto
 {
-    public class RegistrarAeropuertoCommand: IRequest<Guid>
+    public class RegistrarAeropuertoCommand : IRequest<Guid>
     {
-        public string Nombre { get;  set; }
+        public string Nombre { get; set; }
         public string Pais { get; set; }
         public string Ciudad { get; set; }
 

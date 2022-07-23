@@ -31,10 +31,10 @@ namespace Aeronave.Application.UseCases.Queries.ObtenerAeropuertoPorId
                     Id = objPedido.Id,
                     Pais = objPedido.Pais,
                     Ciudad = objPedido.Nombre,
-                    Nombre = objPedido.Ciudad                    
+                    Nombre = objPedido.Ciudad
 
                 };
-               
+
             }
             catch (Exception ex)
             {
@@ -43,6 +43,6 @@ namespace Aeronave.Application.UseCases.Queries.ObtenerAeropuertoPorId
             return result;
         }
 
-       
+
     }
 }

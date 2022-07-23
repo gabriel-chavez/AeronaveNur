@@ -24,7 +24,7 @@ namespace Aeronave.Test.WebApi
             var iApplicationBuilder = new Mock<IApplicationBuilder>();
             var iWebHostEnvironment = new Mock<IWebHostEnvironment>();
 
-                    
+
             try
             {
                 var x = new Startup(iConfiguration.Object);

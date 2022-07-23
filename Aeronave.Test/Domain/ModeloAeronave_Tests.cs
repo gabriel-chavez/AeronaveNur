@@ -13,13 +13,13 @@ namespace Aeronave.Test.Domain
         [Fact]
         public void Create_Correctly()
         {
-           
+
 
             var modeloAeronave = new ModeloAeronave();
             modeloAeronave.AgregarAsientos(1, 1, "");
 
             Assert.NotNull(modeloAeronave);
-  
+
 
 
         }

@@ -1,0 +1,32 @@
+{
+  "name": "aeronave",
+  "version": "1.0.0",
+  "description": "Microservicio desarrollado en .Net Core para el registo de Aeronaves",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabriel-chavez/AeronaveNur.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabriel-chavez/AeronaveNur/issues"
+  },
+  "homepage": "https://github.com/gabriel-chavez/AeronaveNur#readme",
+  "devDependencies": {
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3"
+  },
+  "dependencies": {    
+    "save-dev": "^0.0.1-security"
+  },
+  "lint-staged":{
+    "*.cs": "dotnet-format --include"
+  }
+
+}

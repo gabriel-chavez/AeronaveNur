@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Aeronave.Domain.Event
 {
-    public record MantenimientoAgregado :DomainEvent
+    public record MantenimientoAgregado : DomainEvent
     {
         public DateTime FechaInicio { get; private set; }
 
@@ -20,6 +20,6 @@ namespace Aeronave.Domain.Event
             Observaciones = observaciones;
         }
 
-       
+
     }
 }

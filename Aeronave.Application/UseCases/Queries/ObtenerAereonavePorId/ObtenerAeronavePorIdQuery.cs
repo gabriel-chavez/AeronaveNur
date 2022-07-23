@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Aeronave.Application.UseCases.Queries.ObtenerAereonavePorId
 {
-    public  class ObtenerAeronavePorIdQuery : IRequest<AeronaveDto>
+    public class ObtenerAeronavePorIdQuery : IRequest<AeronaveDto>
     {
         public Guid Id { get; set; }
         public ObtenerAeronavePorIdQuery(Guid id)

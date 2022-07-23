@@ -19,7 +19,7 @@ namespace Aeronave.Test.Domain
             decimal capacidadCargaCombustible = 91380.00m;
             var factory = new ModeloAeronaveFactory();
             var producto = factory.Crear(modelo, marca, capacidadCarga, capacidadCargaCombustible);
-            
+
             Assert.NotNull(producto);
             Assert.Equal(modelo, producto.Modelo);
             Assert.Equal(marca, producto.Marca);

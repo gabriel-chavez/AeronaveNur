@@ -33,7 +33,7 @@ namespace Aeronave.Test.Application.UseCases.Command
         {
             var command = (RegistrarModeloCommand)Activator.CreateInstance(typeof(RegistrarModeloCommand), true);
             Assert.Null(command.Modelo);
-            Assert.Null( command.Marca);
+            Assert.Null(command.Marca);
             Assert.Equal(0m, command.CapacidadCarga);
             Assert.Equal(0m, command.CapacidadCargaCombustible);
             Assert.Null(command.Asientos);

@@ -30,7 +30,7 @@ namespace Aeronave.Test.Infraestructure
             Assert.Equal(nombre, aeronaveReadModel.Nombre);
             Assert.Equal(pais, aeronaveReadModel.Pais);
             Assert.Equal(ciudad, aeronaveReadModel.Ciudad);
-            
+
 
 
         }

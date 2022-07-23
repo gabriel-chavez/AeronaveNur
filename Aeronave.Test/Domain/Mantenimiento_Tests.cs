@@ -8,7 +8,7 @@ using Xunit;
 
 namespace Aeronave.Test.Domain
 {
-    public  class Mantenimiento_Tests
+    public class Mantenimiento_Tests
     {
         [Fact]
         public void Create_Correctly()

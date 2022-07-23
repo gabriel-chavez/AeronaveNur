@@ -16,16 +16,16 @@ namespace Aeronave.Infraestructure.EF.Config.WriteConfig
             builder.ToTable("Aeropuerto");
             builder.HasKey(x => x.Id);
 
-            builder.Property(x => x.Pais)                
+            builder.Property(x => x.Pais)
                 .HasMaxLength(100);
-            builder.Property(x => x.Nombre)            
+            builder.Property(x => x.Nombre)
                 .HasMaxLength(100);
             builder.Property(x => x.Ciudad)
                 .HasMaxLength(100);
 
 
             builder.Ignore("_domainEvents");
-            builder.Ignore(x => x.DomainEvents);            
+            builder.Ignore(x => x.DomainEvents);
         }
     }
 }

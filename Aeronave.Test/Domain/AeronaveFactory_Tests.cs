@@ -19,7 +19,7 @@ namespace Aeronave.Test.Domain
             var matricula = "CP-1128";
             var factory = new AeronaveFactory();
             var producto = factory.Crear(modeloId, aeropuertoId, estado, matricula);
-            var aeronave = new Aeronave.Domain.Model.Aeronaves.Aeronave(modeloId,aeropuertoId,estado,matricula);
+            var aeronave = new Aeronave.Domain.Model.Aeronaves.Aeronave(modeloId, aeropuertoId, estado, matricula);
             var fecha = DateTime.Now;
 
             aeronave.AgregarItem(fecha, fecha, "");
@@ -29,7 +29,7 @@ namespace Aeronave.Test.Domain
             Assert.Equal(aeropuertoId, producto.AereopuertoId);
             Assert.Equal(estado, producto.Estado);
             Assert.Equal(matricula, producto.Matricula);
-            
+
         }
     }
 }

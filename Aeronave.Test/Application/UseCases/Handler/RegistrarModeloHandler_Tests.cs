@@ -23,7 +23,7 @@ namespace Aeronave.Test.Application.UseCases.Handler
         private readonly Mock<IModeloAeronaveFactory> _aeronaveFactory;
         private readonly Mock<IUnitOfWork> _unitOfWork;
 
-      
+
         private string modelo = "767-300 ER";
         private string marca = "Boeing";
         private decimal capacidadCarga = 39790.00m;

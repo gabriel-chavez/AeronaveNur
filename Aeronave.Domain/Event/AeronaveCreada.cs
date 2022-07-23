@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Aeronave.Domain.Event
 {
-    public record AeronaveCreada:DomainEvent
+    public record AeronaveCreada : DomainEvent
     {
         public Guid IdModelo { get; private set; }
         public Guid IdAereopuertoEstacionamiento { get; private set; }

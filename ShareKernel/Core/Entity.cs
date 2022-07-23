@@ -29,7 +29,7 @@ namespace ShareKernel.Core
         [ExcludeFromCodeCoverage]
         protected void CheckRule(IBussinessRule rule)
         {
-            if(rule is null)
+            if (rule is null)
             {
                 throw new ArgumentException("Rule cannot be null");
             }

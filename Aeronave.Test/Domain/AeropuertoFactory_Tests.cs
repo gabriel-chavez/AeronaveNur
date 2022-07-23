@@ -23,7 +23,7 @@ namespace Aeronave.Test.Domain
             Assert.Equal(nombre, producto.Nombre);
             Assert.Equal(pais, producto.Pais);
             Assert.Equal(ciudad, producto.Ciudad);
-         
+
 
         }
     }

@@ -18,16 +18,16 @@ namespace Aeronave.Infraestructure.EF.Config.ReadConfig
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Estado)
-              //  .HasColumnName("estado")
+                //  .HasColumnName("estado")
                 .HasMaxLength(100);
             builder.Property(x => x.Matricula)
-             //   .HasColumnName("matricula")
+                //   .HasColumnName("matricula")
                 .HasMaxLength(100);
 
             builder.HasMany(x => x.MantenimientoAeronave)
                 .WithOne(x => x.Aeronave);
 
-           
+
 
 
         }
@@ -38,13 +38,13 @@ namespace Aeronave.Infraestructure.EF.Config.ReadConfig
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.FechaInicio);
-              //  .HasColumnName("fechaInicio");
+            //  .HasColumnName("fechaInicio");
 
             builder.Property(x => x.FechaFin);
             //    .HasColumnName("fechaFin");
 
             builder.Property(x => x.Observaciones);
-             //   .HasColumnName("observaciones");
+            //   .HasColumnName("observaciones");
 
 
         }

@@ -10,9 +10,9 @@ namespace Aeronave.Application.UseCases.Command.RegistrarAeronave
 {
     public class RegistrarAeronaveCommand : IRequest<Guid>
     {
-        public Guid IdModelo { get;  set; }
-        public Guid IdAereopuerto { get;  set; }
-        public int Estado { get;  set; }
+        public Guid IdModelo { get; set; }
+        public Guid IdAereopuerto { get; set; }
+        public int Estado { get; set; }
         public string Matricula { get; set; }
         public List<MantenimientoDto> MantenimientoAeronave;
 

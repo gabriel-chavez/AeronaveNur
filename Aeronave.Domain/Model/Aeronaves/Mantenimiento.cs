@@ -4,7 +4,7 @@ using System;
 
 namespace Aeronave.Domain.Model.Aeronaves
 {
-    public class Mantenimiento: Entity<Guid>
+    public class Mantenimiento : Entity<Guid>
     {
         public DateTime FechaInicio { get; private set; }
 

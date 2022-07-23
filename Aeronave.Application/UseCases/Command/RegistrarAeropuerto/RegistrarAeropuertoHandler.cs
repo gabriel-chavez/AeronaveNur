@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Aeronave.Application.UseCases.Command.RegistrarAeropuerto
 {
-    public class RegistrarAeropuertoHandler: IRequestHandler<RegistrarAeropuertoCommand, Guid>
+    public class RegistrarAeropuertoHandler : IRequestHandler<RegistrarAeropuertoCommand, Guid>
     {
         private readonly IAeropuertoRepository _aeropuertoRepository;
         private readonly ILogger<RegistrarAeropuertoHandler> _logger;

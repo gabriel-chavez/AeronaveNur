@@ -20,7 +20,7 @@ namespace Aeronave.Test.Application.UseCases.Handler
         private readonly Mock<IAeropuertoRepository> _aeronaveRepository;
         private readonly Mock<ILogger<ObtenerAeropuertoPorIdQuery>> _logger;
 
-        
+
         private Guid idTest;
         private string nombre = "LPB, Bolivia";
         private string pais = "Bolivia";

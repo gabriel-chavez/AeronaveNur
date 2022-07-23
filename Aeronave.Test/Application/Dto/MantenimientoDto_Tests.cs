@@ -34,7 +34,7 @@ namespace Aeronave.Test.Application.Dto
             Assert.Equal(id, mantenimientoDto.Id);
             Assert.Equal(fechaInicio, mantenimientoDto.FechaInicio);
             Assert.Equal(fechaFin, mantenimientoDto.FechaFin);
-            Assert.Equal(observaciones,mantenimientoDto.Observaciones);
+            Assert.Equal(observaciones, mantenimientoDto.Observaciones);
 
 
 

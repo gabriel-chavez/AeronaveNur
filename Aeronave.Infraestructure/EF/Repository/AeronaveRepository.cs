@@ -25,7 +25,7 @@ namespace Aeronave.Infraestructure.EF.Repository
 
         public async Task<Domain.Model.Aeronaves.Aeronave> FindByIdAsync(Guid id)
         {
-            return await _aeronaves.SingleAsync(x=>x.Id == id);       
+            return await _aeronaves.SingleAsync(x => x.Id == id);
         }
         public Task UpdateAsync(Domain.Model.Aeronaves.Aeronave obj)
         {

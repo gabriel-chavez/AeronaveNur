@@ -38,8 +38,8 @@ namespace Aeronave.Test.Application.Dto
             Assert.Equal(modeloAeronaveIdTest, objPedido.ModeloAeronaveId);
             Assert.Equal(aereopuertoEstacionamientoIdTest, objPedido.AereopuertoEstacionamientoId);
             Assert.Equal(estadoTest, objPedido.Estado);
-            Assert.Equal(matriculaTest,objPedido.Matricula);
-            Assert.Equal(mantenimientoTest,objPedido.MantenimientoAeronave);
+            Assert.Equal(matriculaTest, objPedido.Matricula);
+            Assert.Equal(mantenimientoTest, objPedido.MantenimientoAeronave);
 
         }
 

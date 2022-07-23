@@ -8,7 +8,7 @@ using Xunit;
 
 namespace Aeronave.Test.WebApi
 {
-    public  class Program_Tests
+    public class Program_Tests
     {
         [Fact]
         public void Create_Correctly()
@@ -25,7 +25,7 @@ namespace Aeronave.Test.WebApi
                 Assert.False(false);
             }
 
-           
+
         }
     }
 }

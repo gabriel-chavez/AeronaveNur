@@ -1,4 +1,10 @@
 services:
+  web-server:
+    image: gabrielchavezr/aeronave_webapi:v1        
+    ports:
+      - "8181:80"  
+    depends_on:
+      - mssql-server
   mssql-server:
     image: mcr.microsoft.com/mssql/server:2019-GA-ubuntu-16.04    
     environment:
@@ -6,10 +12,4 @@ services:
       - SA_PASSWORD=Gabriel123+
     ports:
       - "1434:1433"
-  
-  web-api:  
-    image: gabrielchavezr/aeronave_webapi:v1
-    environment:  
-      - ASPNETCORE_ENVIRONMENT=Development  
-    ports:  
-      - "8181:80"  
+   

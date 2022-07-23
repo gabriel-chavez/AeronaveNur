@@ -6,21 +6,18 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 
-namespace Aeronave.WebApi.Controllers
-{
+namespace Aeronave.WebApi.Controllers {
     [ApiController]
     [Route("/api/[controller]")]
-    public class AeronaveController : ControllerBase
-    {
+    public class AeronaveController : ControllerBase {
         private readonly IMediator _mediator;
 
-        public AeronaveController(IMediator mediator)
-        {
+        public AeronaveController(IMediator mediator) {
+
             _mediator = mediator;
         }
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] RegistrarAeronaveCommand command)
-        {
+        public async Task<IActionResult> Create([FromBody] RegistrarAeronaveCommand command) {
 
             Guid id = await _mediator.Send(command);
             if (id == Guid.Empty)
@@ -29,8 +26,7 @@ namespace Aeronave.WebApi.Controllers
         }
         [Route("{id:guid}")]
         [HttpGet]
-        public async Task<IActionResult> GetAeronaveById(Guid id)
-        {
+        public async Task<IActionResult> GetAeronaveById(Guid id) {
             ObtenerAeronavePorIdQuery query = new ObtenerAeronavePorIdQuery(id);
             AeronaveDto result = await _mediator.Send(query);
             if (result == null)

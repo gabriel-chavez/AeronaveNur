@@ -16,8 +16,6 @@ namespace Aeronave.WebApi.Controllers
 
         public AeronaveController(IMediator mediator)
         {
-
-
             _mediator = mediator;
         }
         [HttpPost]

@@ -13,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Aeronave.Infraestructure.EF;
 using Aeronave.Infraestructure.EF.Repository;
+using MassTransit;
 
 namespace Aeronave.Infraestructure
 {
@@ -37,9 +38,31 @@ namespace Aeronave.Infraestructure
             services.AddScoped<IAeropuertoRepository, AeropuertoRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
+            AddRabbitMq(services, configuration);
 
             return services;
         }
+        private static void AddRabbitMq(this IServiceCollection services, IConfiguration configuration)
+        {
+            var rabbitMqHost = configuration["RabbitMq:Host"];
+            var rabbitMqPort = configuration["RabbitMq:Port"];
+            var rabbitMqUserName = configuration["RabbitMq:UserName"];
+            var rabbitMqPassword = configuration["RabbitMq:Password"];
 
+            services.AddMassTransit(config =>
+            {
+                config.UsingRabbitMq((context, cfg) =>
+                {
+                    var uri = string.Format("amqp://{0}:{1}@{2}:{3}", rabbitMqUserName, rabbitMqPassword, rabbitMqHost, rabbitMqPort);
+                    cfg.Host(uri);
+                });
+            });
+
+            //services.AddSingleton<RabbitMqOptions>(sp =>
+            //{
+            //    var configuration=sp.GetRequiredService<IConfiguration>();
+            //    return configuration.GetSection("RabbitMq").Get<RabbitMqOptions>
+            //});
+        }
     }
 }

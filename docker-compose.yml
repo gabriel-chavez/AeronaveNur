@@ -3,13 +3,30 @@ services:
     image: gabrielchavezr/aeronave_webapi:v1        
     ports:
       - "8181:80"  
+    environment:   
+      ConnectionStrings:PedidoDbConnectionString: "Server=mssql-server,1434;Database=AeronaveDb;User Id=sa; Password=Gabriel123+"
     depends_on:
-      - mssql-server
+      - mssql-server    
+    networks:
+    - aforo255
   mssql-server:
-    image: mcr.microsoft.com/mssql/server:2019-GA-ubuntu-16.04    
+    image: "mcr.microsoft.com/mssql/server:2017-latest"  
     environment:
-      - ACCEPT_EULA=Y
-      - SA_PASSWORD=Gabriel123+
+      MSSQL_SA_PASSWORD: "Gabriel123+"
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: Express
     ports:
       - "1434:1433"
-   
+    volumes:
+      - 'mssql-server-data:/var/mssql/data'  
+    container_name: "mssql-server"
+    hostname: "mssql-server"
+    networks:
+    - aforo255
+volumes:
+  mssql-server-data:
+
+
+networks:
+  aforo255:
+    name: micro

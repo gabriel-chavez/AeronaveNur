@@ -38,7 +38,7 @@ namespace Aeronave.Test.WebApi
             var id = new Guid("3FA85F64-5717-4562-B3FC-2C963F66AFA6");
 
 
-            var resultado = aeropuertoController.GetAeronaveById(id);
+            var resultado = aeropuertoController.GetAeropuertoById(id);
 
             Assert.NotNull(resultado);
 

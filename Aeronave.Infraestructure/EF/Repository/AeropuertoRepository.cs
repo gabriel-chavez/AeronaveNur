@@ -28,5 +28,10 @@ namespace Aeronave.Infraestructure.EF.Repository
         {
             return await _aeropuerto.SingleAsync(x => x.Id == id);
         }
+
+        public async Task<List<Aeropuerto>> RetornarAeronaves()
+        {
+            return await _aeropuerto.ToListAsync();
+        }
     }
 }

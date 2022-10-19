@@ -29,11 +29,16 @@ namespace Aeronave.Infraestructure.EF.Repository
             //return await _modeloAeronave.Include("Asiento").SingleAsync(x => x.Id == id);
             return await _modeloAeronave.SingleAsync(x => x.Id == id);
         }
-
+        public async Task<List<ModeloAeronave>> RetornarAeronaves()
+        {
+            return await _modeloAeronave.ToListAsync();
+        }
         public Task UpdateAsync(ModeloAeronave obj)
         {
             _modeloAeronave.Update(obj);
             return Task.CompletedTask;
         }
+
+
     }
 }

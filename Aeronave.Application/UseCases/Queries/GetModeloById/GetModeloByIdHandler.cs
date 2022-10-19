@@ -28,7 +28,6 @@ namespace Aeronave.Application.UseCases.Queries.GetModeloByNombre
             try
             {
                 ModeloAeronave objPedido = await _modeloAereonaveRepository.FindByIdAsync(request.Id);
-
                 result = new ModeloAeronaveDto()
                 {
                     Id = objPedido.Id,

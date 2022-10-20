@@ -32,7 +32,7 @@ namespace Aeronave.Application.UseCases.Queries.ObtenerAeronaves
                     AeronaveDto aeronaveDto = new AeronaveDto();
                     aeronaveDto.Id = item.Id;
                     aeronaveDto.ModeloAeronaveId = item.ModeloAeronaveId;
-
+                    aeronaveDto.AereopuertoEstacionamientoId = item.AereopuertoId;
                     aeronaveDto.Estado = item.Estado;
                     aeronaveDto.Matricula = item.Matricula;
                     aeronaveDto.MantenimientoAeronave = null;

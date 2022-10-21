@@ -1,4 +1,4 @@
-name: .NET
+name: Build, Test, Analyze
 
 on:
   pull_request:

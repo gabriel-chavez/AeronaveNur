@@ -38,6 +38,8 @@ namespace Aeronave.Test.Application.UseCases.Handler
             _aeronaveFactory = new Mock<IModeloAeronaveFactory>();
             _unitOfWork = new Mock<IUnitOfWork>();
             aeronaveTest = new ModeloAeronaveFactory().Crear(modelo, marca, capacidadCarga, capacidadCargaCombustible);
+
+
         }
         [Fact]
         public void CrearProductoHandler_HandleCorrectly()

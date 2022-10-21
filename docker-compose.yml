@@ -1,27 +1,21 @@
 ﻿services:
 
-  # rabbitmq:
-  #   image: rabbitmq:3-management
-  #   container_name: rabbitmq
-  #   ports:
-  #     - "5672:5672"
-  #     - "15672:15672"
-  #   # networks:
-  #   #   - aforo255
+  
 
   web-server:
     image: gabrielchavezr/aeronave_webapi:v1
+    build:
+      context: .
+      dockerfile: ./Aeronave.WebApi/Dockerfile
     ports:
       - "8181:80"
       - "4433:443"
     environment:
       ConnectionStrings:PedidoDbConnectionString: "Server=mssql-server;Database=AeronaveDb;User Id=sa; Password=Gabriel123+"
-      #ConnectionStrings:mysql: "server=database-mysql;port=3307;database=AeronaveDb;user=root;password=Vuelos123"
+   
     depends_on:
       - mssql-server
-    # networks:
-    #   - aforo255
-      ####
+   
   mssql-server:
     image: "mcr.microsoft.com/mssql/server:2017-latest"
     environment:
@@ -34,23 +28,6 @@
       - 'mssql-server-data:/var/mssql/data'
     container_name: "mssql-server"
     hostname: "mssql-server"
-    # networks:
-    #   - aforo255
-  # database-mysql:
-  #     image: mysql:8.0.26
-  #     container_name: database-mysql
-  #     restart: always
-  #     environment:
-  #     - MYSQL_ROOT_PASSWORD=Vuelos123
-  #     ports:
-  #     - 3307:3306
-  #     - 33061:33060
-  #     networks:
-  #     - aforo255  
+    
 volumes:
   mssql-server-data:
-
-
-# networks:
-#   aforo255:
-#     name: micro

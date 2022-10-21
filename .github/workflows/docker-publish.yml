@@ -46,7 +46,7 @@ jobs:
               StrictHostKeyChecking no
           END
       - name: Stop the server
-        run: ssh staging 'cd /ms/AeronaveNur/ && docker-compose down'
+        run: ssh staging 'cd /ms/AeronaveNur/ && sudo docker-compose down'
 
       - name: Do deploy
         run: ssh staging 'cd /ms/AeronaveNur/ && sh update-aeronave.sh'

@@ -46,11 +46,11 @@ jobs:
               StrictHostKeyChecking no
           END
       - name: Stop the server
-        run: ssh staging 'sudo systemctl stop pedidos.service'
+        run: ssh staging 'cd /ms/AeronaveNur/ && docker-compose down'
 
       - name: Do deploy
-        run: ssh staging 'cd /var/www/pedidos-app && bash deploy.sh'
+        run: ssh staging 'cd /ms/AeronaveNur/ && sh update-aeronave.sh'
         
       - name: Start the server
         if: ${{ always() }}
-        run: ssh staging 'sudo systemctl start pedidos.service'
+        run: ssh staging 'cd /ms/AeronaveNur/ && docker-compose up --build -d'

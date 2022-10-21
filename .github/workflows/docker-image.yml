@@ -1,0 +1,22 @@
+name: Docker build
+
+on:
+  pull_request:
+    types: [opened, reopened]
+    branches:    
+      - 'develop'
+
+jobs:
+
+  build:
+    name: Build with Docker
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+          dotnet-version: 5.0.x
+    - name: Building the image from the Dockerfile
+      uses: ./.github/action-docker

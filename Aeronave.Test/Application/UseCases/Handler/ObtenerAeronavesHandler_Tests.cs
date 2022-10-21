@@ -36,6 +36,9 @@ namespace Aeronave.Test.Application.UseCases.Handler
 
             aeronaveTest.Add(x);
             //  aeronaveTest.AgregarItem(DateTime.Now, DateTime.Now, "");
+
+
+
         }
         public Mock<IAeronaveRepository> AeronaveRepository => _aeronaveRepository;
 

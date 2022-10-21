@@ -45,7 +45,7 @@ jobs:
               IdentityFile ~/.ssh/staging.key
               StrictHostKeyChecking no
           END
-      - name: Stop the server+ $KNOWN_HOSTS
+      - name: Stop the server
         run: ssh staging 'cd /ms/AeronaveNur/ && sudo docker-compose down'
 
       - name: Do deploy

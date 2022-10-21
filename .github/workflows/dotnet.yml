@@ -1,9 +1,8 @@
 name: .NET
 
-on:
-  
+on:  
   pull_request:
-    types:[opened,reopened]
+    types:[opened, reopened]
     branches:
       - 'develop'
 

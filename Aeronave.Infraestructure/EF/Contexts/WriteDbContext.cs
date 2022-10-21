@@ -7,12 +7,14 @@ using Microsoft.EntityFrameworkCore;
 using ShareKernel.Core;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Aeronave.Infraestructure.EF.Contexts
 {
+    [ExcludeFromCodeCoverage]
     public class WriteDbContext : DbContext
     {
         public virtual DbSet<Aeronave.Domain.Model.Aeronaves.Aeronave> Aeronave { get; private set; }

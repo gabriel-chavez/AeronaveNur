@@ -3,13 +3,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
-
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Aeronave.Infraestructure.EF.Config.ReadConfig
 {
+    [ExcludeFromCodeCoverage]
     public class AeronaveReadConfig : IEntityTypeConfiguration<AeronaveReadModel>, IEntityTypeConfiguration<MantenimientoReadModel>
     {
         public void Configure(EntityTypeBuilder<AeronaveReadModel> builder)

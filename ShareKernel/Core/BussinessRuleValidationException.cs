@@ -4,6 +4,7 @@ using System.Runtime.Serialization;
 
 namespace ShareKernel.Core
 {
+
     [Serializable]
     public class BussinessRuleValidationException : Exception
     {

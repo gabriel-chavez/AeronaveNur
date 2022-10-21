@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ShareKernel.Core
 {
+    [ExcludeFromCodeCoverage]
     public class Result
     {
         public bool Success { get; set; }
@@ -24,7 +26,7 @@ namespace ShareKernel.Core
         {
         }
     }
-
+    [ExcludeFromCodeCoverage]
     public class Result<T> : Result
     {
         public T? Value { get; set; }

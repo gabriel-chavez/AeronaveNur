@@ -5,12 +5,14 @@ using Microsoft.EntityFrameworkCore;
 using ShareKernel.Core;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Aeronave.Infraestructure.EF.Contexts
 {
+    [ExcludeFromCodeCoverage]
     public class ReadDbContext : DbContext
     {
         public virtual DbSet<AeronaveReadModel> Aeronave { get; private set; }

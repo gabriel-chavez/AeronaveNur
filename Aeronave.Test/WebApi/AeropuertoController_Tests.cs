@@ -43,5 +43,16 @@ namespace Aeronave.Test.WebApi
             Assert.NotNull(resultado);
 
         }
+        [Fact]
+        public void Get_All_Correctly()
+        {
+            var mediator = new Mock<IMediator>();
+            AeropuertoController aeropuertoController = new AeropuertoController(mediator.Object);
+
+            var resultado = aeropuertoController.GetAeropuertos();
+
+            Assert.NotNull(resultado);
+
+        }
     }
 }

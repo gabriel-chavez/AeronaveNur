@@ -3,12 +3,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Aeronave.Infraestructure.EF.Config.WriteConfig
 {
+    [ExcludeFromCodeCoverage]
     internal class ModeloAeronaveWriteConfig : IEntityTypeConfiguration<ModeloAeronave>, IEntityTypeConfiguration<Asiento>
     {
         public void Configure(EntityTypeBuilder<ModeloAeronave> builder)

@@ -14,9 +14,11 @@ using System.Threading.Tasks;
 using Aeronave.Infraestructure.EF;
 using Aeronave.Infraestructure.EF.Repository;
 using MassTransit;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Aeronave.Infraestructure
 {
+    [ExcludeFromCodeCoverage]
     public static class Extensions
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services,

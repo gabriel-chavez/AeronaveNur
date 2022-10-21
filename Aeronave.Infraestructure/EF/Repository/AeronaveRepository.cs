@@ -3,12 +3,14 @@ using Aeronave.Infraestructure.EF.Contexts;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Aeronave.Infraestructure.EF.Repository
 {
+    [ExcludeFromCodeCoverage]
     public class AeronaveRepository : IAeronaveRepository
     {
         public readonly DbSet<Aeronave.Domain.Model.Aeronaves.Aeronave> _aeronaves;

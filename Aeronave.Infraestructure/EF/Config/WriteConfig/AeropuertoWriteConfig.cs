@@ -3,12 +3,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Aeronave.Infraestructure.EF.Config.WriteConfig
 {
+    [ExcludeFromCodeCoverage]
     public class AeropuertoWriteConfig : IEntityTypeConfiguration<Aeropuerto>
     {
         public void Configure(EntityTypeBuilder<Aeropuerto> builder)

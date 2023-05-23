@@ -46,7 +46,7 @@ namespace Aeronave.Application.UseCases.Command.RegistrarAeronave
                 aeronave.ConsolidarRegistro();
                 await _aeronaveRepository.CreateAsync(aeronave);
                 await _unitOfWork.Commit();
-                //prueba
+                
                 return aeronave.Id;
             }
             catch (Exception ex)

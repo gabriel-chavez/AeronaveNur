@@ -47,8 +47,7 @@ namespace Aeronave.Application.UseCases.Command.RegistrarAeronave
                 await _aeronaveRepository.CreateAsync(aeronave);
                 await _unitOfWork.Commit();
                 
-                return aeronave.Id;
-            }
+                return aeronave.Id;}
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error al crear la aeronave");

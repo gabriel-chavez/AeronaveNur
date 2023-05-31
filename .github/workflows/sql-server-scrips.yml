@@ -29,18 +29,19 @@ jobs:
         const Connection = require('tedious').Connection;
         const Request = require('tedious').Request;
         const config = {
-          server: '<SQL_SERVER_HOST>',
+          server: ${{ secrets.SP_SQL_SERVER_HOST }},
+          options: {
+            port: ${{ secrets.SP_SQL_SERVER_HOST_PORT }},
+            encrypt: true,
+            database: 'BD_PRUEBAS'
+          }
           authentication: {
             type: 'default',
             options: {
-              userName: '<SQL_SERVER_USERNAME>',
-              password: '<SQL_SERVER_PASSWORD>'
+              userName: 'sa',
+              password: ${{ secrets.SP_SQL_SERVER_PASSWORD }}
             }
-          },
-          options: {
-            encrypt: true,
-            database: '<SQL_DATABASE>'
-          }
+          }          
         };
 
         const connection = new Connection(config);
@@ -53,7 +54,7 @@ jobs:
 
           console.log('Connected to SQL Server.');
 
-          const scriptsFolder = '<SCRIPTS_FOLDER_PATH>';
+          const scriptsFolder = 'scripts';
           const scripts = fs.readdirSync(scriptsFolder);
 
           scripts.forEach((script) => {

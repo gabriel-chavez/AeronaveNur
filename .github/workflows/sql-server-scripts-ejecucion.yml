@@ -1,0 +1,21 @@
+name: Ejecucion scripts SQL Server
+
+on:
+  push:
+    branches: [ "master" ]
+jobs:
+  execute-sql-scripts:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Ejecutar scripts de SQL desde carpeta
+      run: |
+          # Obtiene la lista de archivos .sql en la carpeta 'scripts'
+          $scripts = Get-ChildItem -Path scripts -Filter *.sql
+
+          foreach ($script in $scripts) {
+            # Ejecuta el script utilizando Invoke-SqlCmd
+            Invoke-SqlCmd -ServerInstance '${{ secrets.SP_SQL_SERVER_HOST }},${{ secrets.SP_SQL_SERVER_HOST_PORT }}' -Database 'BD_PRUEBAS' -Username 'sa' -Password ${{ secrets.SP_SQL_SERVER_PASSWORD }} -InputFile $script.FullName
+          }
+
+

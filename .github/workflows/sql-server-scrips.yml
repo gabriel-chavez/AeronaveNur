@@ -27,17 +27,17 @@ jobs:
         const Connection = require('tedious').Connection;
         const Request = require('tedious').Request;
         const config = {
-          server: '34.118.139.240',
+          server: '${{ secrets.SP_SQL_SERVER_HOST }}',
           options: {
-            port: 1434,
+            port: ${{ secrets.SP_SQL_SERVER_HOST_PORT }},
             encrypt: true,
             database: 'BD_PRUEBAS'
-          }
+          },
           authentication: {
             type: 'default',
             options: {
               userName: 'sa',
-              password: 'Gabriel123+'
+              password: '${{ secrets.SP_SQL_SERVER_PASSWORD }}'
             }
           }          
         };

@@ -1,10 +1,10 @@
 name: Execute SQL Scripts on SQL Server
 
 on:
-  push:
-    branches:
-      - main
-
+  pull_request:
+    types: [opened, reopened]
+    branches:    
+      - 'develop'
 jobs:
   execute-sql-scripts:
     runs-on: ubuntu-latest

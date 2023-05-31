@@ -27,7 +27,7 @@ jobs:
         const Connection = require('tedious').Connection;
         const Request = require('tedious').Request;
         const config = {
-          server: 34.118.139.240,
+          server: '34.118.139.240',
           options: {
             port: 1434,
             encrypt: true,

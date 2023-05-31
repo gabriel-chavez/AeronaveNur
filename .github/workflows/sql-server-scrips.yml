@@ -1,0 +1,76 @@
+name: Execute SQL Scripts on SQL Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  execute-sql-scripts:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14
+
+    - name: Install dependencies
+      run: npm install tedious
+
+    - name: Execute SQL scripts
+      run: |
+        node -e "
+        const fs = require('fs');
+        const path = require('path');
+        const Connection = require('tedious').Connection;
+        const Request = require('tedious').Request;
+        const config = {
+          server: '<SQL_SERVER_HOST>',
+          authentication: {
+            type: 'default',
+            options: {
+              userName: '<SQL_SERVER_USERNAME>',
+              password: '<SQL_SERVER_PASSWORD>'
+            }
+          },
+          options: {
+            encrypt: true,
+            database: '<SQL_DATABASE>'
+          }
+        };
+
+        const connection = new Connection(config);
+
+        connection.on('connect', (err) => {
+          if (err) {
+            console.error('Failed to connect:', err.message);
+            return;
+          }
+
+          console.log('Connected to SQL Server.');
+
+          const scriptsFolder = '<SCRIPTS_FOLDER_PATH>';
+          const scripts = fs.readdirSync(scriptsFolder);
+
+          scripts.forEach((script) => {
+            const scriptPath = path.join(scriptsFolder, script);
+            const sqlScript = fs.readFileSync(scriptPath, 'utf8');
+
+            const request = new Request(sqlScript, (error) => {
+              if (error) {
+                console.error(`Error executing ${script}:`, error.message);
+              } else {
+                console.log(`${script} executed successfully.`);
+              }
+            });
+
+            connection.execSql(request);
+          });
+
+          connection.close();
+        });
+        "

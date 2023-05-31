@@ -61,9 +61,9 @@ jobs:
 
             const request = new Request(sqlScript, (error) => {
               if (error) {
-                console.error(`Error executing ${script}:`, error.message);
+                console.error('Error executing ${script}:', error.message);
               } else {
-                console.log(`${script} executed successfully.`);
+                console.log('${script} executed successfully.');
               }
             });
 

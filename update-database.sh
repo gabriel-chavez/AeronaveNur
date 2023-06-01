@@ -1,6 +1,6 @@
 #!/bin/sh
 carpeta_scripts="scripts"
-server='34.118.139.240'
+server='35.203.92.126'
 port='1434'
 database='BD_PRUEBAS'
 username='sa'

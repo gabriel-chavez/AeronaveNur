@@ -49,7 +49,7 @@ jobs:
         run: ssh staging 'cd /ms/AeronaveNur/ && docker-compose down'
 
       - name: Do deploy
-        run: ssh staging 'cd /ms/AeronaveNur/ && sh update-aeronave.sh'
+        run: ssh staging 'cd /ms/AeronaveNur/ && sudo sh update-aeronave.sh'
         
       - name: Start the server
         if: ${{ always() }}

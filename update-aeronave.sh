@@ -24,7 +24,8 @@ username='sa'
 password='Gabriel123+'
 
 # Itera sobre cada script y ejecútalo utilizando sqlcmd
-for script in $scripts; do
-  sqlcmd -S "$server,$port" -d "$database" -U "$username" -P "$password" -i "$script"
+find "$carpeta_scripts" -type f -name "*.sql" -print0 | while IFS= read -r -d $'\0' archivo; do
+  echo "Ejecutando script: $archivo"
+  sqlcmd -S "$server,$port" -d "$database" -U "$username" -P "$password" -i "$archivo"
 done
 

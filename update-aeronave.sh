@@ -9,7 +9,7 @@ git fetch
 git reset --hard HEAD
 git merge origin/$RAMA_REPO
 
-# docker-compose up --build -d
+docker-compose up --build -d
 
 
 

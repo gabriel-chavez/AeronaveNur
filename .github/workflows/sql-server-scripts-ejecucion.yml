@@ -11,11 +11,13 @@ jobs:
     - name: Ejecutar scripts de SQL desde carpeta
       run: |
           # Obtiene la lista de archivos .sql en la carpeta 'scripts'
-          $scripts = Get-ChildItem -Path scripts -Filter *.sql
+          scripts=$(find scripts -type f -name '*.sql')
 
-          foreach ($script in $scripts) {
-            # Ejecuta el script utilizando Invoke-SqlCmd
-            Invoke-SqlCmd -ServerInstance '34.118.139.240,1434' -Database 'BD_PRUEBAS' -Username 'sa' -Password Gabriel123+ -InputFile $script.FullName
-          }
+          for script in $scripts; do
+            # Ejecuta el script utilizando sqlcmd
+            sqlcmd -S 34.118.139.240,1434 -d BD_PRUEBAS -U sa -P Gabriel123+ -i "$script"
+          done
+
+
 
 

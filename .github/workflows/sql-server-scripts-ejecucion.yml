@@ -15,7 +15,7 @@ jobs:
 
           foreach ($script in $scripts) {
             # Ejecuta el script utilizando Invoke-SqlCmd
-            Invoke-SqlCmd -ServerInstance '${{ secrets.SP_SQL_SERVER_HOST }},${{ secrets.SP_SQL_SERVER_HOST_PORT }}' -Database 'BD_PRUEBAS' -Username 'sa' -Password ${{ secrets.SP_SQL_SERVER_PASSWORD }} -InputFile $script.FullName
+            Invoke-SqlCmd -ServerInstance '34.118.139.240,1434' -Database 'BD_PRUEBAS' -Username 'sa' -Password Gabriel123+ -InputFile $script.FullName
           }
 
 

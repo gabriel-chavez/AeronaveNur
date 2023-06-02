@@ -51,6 +51,13 @@ jobs:
       - name: Do deploy
         run: ssh staging 'cd /ms/AeronaveNur/ && sudo sh update-aeronave.sh'
         
+      - name: Get release name
+        id: get-release-name
+        run: echo "RELEASE_NAME=${{ github.event.release.name }}" >> $GITHUB_ENV
+        
+      - name: run scripts
+        run: ssh staging 'cd /ms/AeronaveNur/ && sudo sh update-database.sh' $RELEASE_NAME
+        
       - name: Start the server
         if: ${{ always() }}
         run: ssh staging 'cd /ms/AeronaveNur/ && docker-compose up --build -d'

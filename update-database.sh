@@ -1,4 +1,5 @@
 #!/bin/sh
+echo "The variable is: $1"
 carpeta_scripts="scripts"
 server='35.203.92.126'
 port='1434'

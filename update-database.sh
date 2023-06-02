@@ -2,7 +2,6 @@
 carpeta_scripts="scripts"
 server='35.203.92.126'
 port='1434'
-database='BD_PRUEBAS'
 username='sa'
 password='Gabriel123+'
 archivos=$(ls -1 "$carpeta_scripts"/*.sql | sort)

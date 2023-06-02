@@ -56,7 +56,7 @@ jobs:
         run: echo "RELEASE_NAME=${{ github.event.release.name }}" >> $GITHUB_ENV
         
       - name: run scripts
-        run: ssh staging 'cd /ms/AeronaveNur/ && sudo sh update-database.sh' $RELEASE_NAME
+        run: ssh staging 'cd /ms/AeronaveNur/ && sudo sh update-database.sh $RELEASE_NAME'
         
       - name: Start the server
         if: ${{ always() }}

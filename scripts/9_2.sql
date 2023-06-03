@@ -5,7 +5,7 @@ GO
 -- Datos creacion
 -- Autor: LUIS CHAVEZ
 -- Descripcion:	Retorna la información de todos los planes de pagos.
--- Version: 1.0
+-- Version: 1.1
 -- =============================================
 
 CREATE OR ALTER PROCEDURE dbo.[CLIENTES_LISTAR_NUEVOS] @I_USUARIO_AUT    NVARCHAR(100), 
